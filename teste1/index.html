@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Teste1</title>
+</head>
+<body>
+  <canvas id="c"></canvas>
+  <script id="vertex-shader-2d" type="notjs">
+ 
+    // um atributo receberá dados de um buffer
+    attribute vec4 a_position;
+   
+    // todos os shaders têm uma função principal
+    void main() {
+   
+      // gl_Position é uma variável especial um vertex shader
+      // é responsável por definir
+      gl_Position = a_position;
+    }
+   
+  </script>
+   
+  <script id="fragment-shader-2d" type="notjs">
+   
+    // fragment shaders não têm uma precisão padrão, então precisamos
+    // para escolher um. mediump é um bom padrão
+    precision mediump float;
+   
+    void main() {
+      // gl_FragColor é uma variável especial um fragment shader
+      // é responsável por definir
+      gl_FragColor = vec4(1, 0, 0.5, 1); // retorna roxo-avermelhado
+    }
+   
+  </script>
+  <script src="https://webglfundamentals.org/webgl/resources/webgl-utils.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
